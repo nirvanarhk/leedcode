@@ -7,11 +7,15 @@ public:
     string convert(string s, int numRows) {
         int len = s.length();
         int maxcol = numRows;
-        if (numRows > 1) {
-            maxcol = (len + 2*numRows -3)/(2*numRows-2);
-        }
         string outstr = s;
         int outstrlen = 0;
+        if (numRows > 1) {
+            maxcol = (len + 2*numRows -3)/(2*numRows-2);
+        } else {
+            return outstr;
+        }
+
+        
         // row 0
         for(int j = 0; j <= maxcol; j++) {
             int k = j * 2 * (numRows - 1);
